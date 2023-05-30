@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import json
+from flask import Flask, json, render_template
 import logging
 
 app = Flask(__name__)
@@ -32,7 +31,8 @@ def metrics():
 def hello():
     ## log line
     app.logger.info('Main request successfull')
-    return "Hello World, VIKA!"
+    # return "Hello World, VIKA!"
+    return render_template('index.html')
 
 if __name__ == "__main__":
     
